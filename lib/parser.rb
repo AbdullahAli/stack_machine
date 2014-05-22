@@ -1,7 +1,7 @@
 module StackMachine
   module Parser
     ALLOWED_OPERATORS = ['+', '*'] unless defined?(ALLOWED_OPERATORS)
-    ALLOWED_INTEGERS = (0..9).to_a.map!(&:to_s) unless defined?(ALLOWED_INTEGERS)
+    ALLOWED_INTEGERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] unless defined?(ALLOWED_INTEGERS)
     ALLOWED_CHARACTERS = (ALLOWED_OPERATORS + ALLOWED_INTEGERS) unless defined?(ALLOWED_CHARACTERS)
 
     def valid_input?
