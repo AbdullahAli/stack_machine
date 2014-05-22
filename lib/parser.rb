@@ -8,6 +8,10 @@ module StackMachine
       !empty_input? && starts_with_integer? && !has_invalid_characters? && has_more_integers_than_operators?
     end
 
+    def is_operator?(character)
+      ALLOWED_OPERATORS.include?(character)
+    end
+
     private
 
     def empty_input?

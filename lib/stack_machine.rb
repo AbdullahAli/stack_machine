@@ -39,9 +39,5 @@ module StackMachine
       end
       StackMachine.const_get(processor).new
     end
-
-    def is_operator?(character)
-      ALLOWED_OPERATORS.include?(character)
-    end
   end
 end
