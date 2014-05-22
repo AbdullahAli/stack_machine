@@ -1,7 +1,7 @@
 # StackMachine
 
 ## How I went about doing this task
-#TODO
+[Please refer to this document](AbdullahALI_APPROACH.pdf)
 
 ## Usage
 1) cd to gem
