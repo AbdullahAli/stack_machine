@@ -25,7 +25,7 @@ describe StackMachine::Stack do
       @stack = StackMachine::Stack.new
     end
 
-    (1..9).to_a.each do |integer|
+    (0..9).to_a.each do |integer|
       it "should push the integer '#{integer}' to the stack" do
         @stack.count.should == 0
         @stack.process_integer(integer)
