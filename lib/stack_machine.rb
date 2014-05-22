@@ -26,7 +26,7 @@ module StackMachine
       @stack = ::StackMachine::Stack.new
 
       @input.each_char do |character|
-        processor_for(character).process(stack, character)
+        processor_for(character).process(@stack, character)
       end
       @stack
     end
