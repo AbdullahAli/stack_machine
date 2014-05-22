@@ -14,7 +14,7 @@ describe StackMachine::Parser do
 
   describe "#valid_input?" do
     context "valid inputs" do
-      ["13+62*7+*", "11+", "01+4+"].each do |valid_input|
+      ["13+62*7+*", "11+", "01+4+", "001+4++"].each do |valid_input|
         it "should return true since the input is '#{valid_input}'" do
           @tester_object.input = valid_input
           @tester_object.valid_input?.should be_true
@@ -27,7 +27,6 @@ describe StackMachine::Parser do
         "",     # empty input
         "+",    # does not start with integer
         "g1",   # has invalid characters
-        "1++",  # has consecutive operators
         "11+++" # does not have more integers than operators
       ].each do |invalid_input|
         it "should return false since the input is '#{invalid_input}'" do

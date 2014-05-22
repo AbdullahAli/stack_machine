@@ -5,7 +5,7 @@ module StackMachine
     ALLOWED_CHARACTERS = (ALLOWED_OPERATORS + ALLOWED_INTEGERS) unless defined?(ALLOWED_CHARACTERS)
 
     def valid_input?
-      !empty_input? && starts_with_integer? && !has_invalid_characters? && !has_consecutive_operators? && has_more_integers_than_operators?
+      !empty_input? && starts_with_integer? && !has_invalid_characters? && has_more_integers_than_operators?
     end
 
     private
@@ -24,12 +24,6 @@ module StackMachine
     def has_invalid_characters?
       invalid_characters = @input.chars - ALLOWED_CHARACTERS
       invalid_characters.any?
-    end
-
-    def has_consecutive_operators?
-      @input.chars.each_cons(2) do |character_pair|
-        (character_pair.first == character_pair.last) && ALLOWED_OPERATORS.include?(character_pair.first)
-      end
     end
 
     def has_more_integers_than_operators?
