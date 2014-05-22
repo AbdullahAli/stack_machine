@@ -15,10 +15,7 @@ module StackMachine
     end
 
     def starts_with_integer?
-      Integer(@input.chars.first)
-      true
-    rescue ArgumentError
-      false
+      ALLOWED_INTEGERS.include?(@input.chars.first)
     end
 
     def has_invalid_characters?
