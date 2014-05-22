@@ -6,17 +6,17 @@ describe StackMachine::Stack do
     @stack = StackMachine::Stack.new
   end
 
-  describe "#process_addition" do
+  describe "#add" do
     it "should attempt to apply the operator '+'" do
       @stack.should_receive(:apply_operator).with(:+)
-      @stack.process_addition
+      @stack.add
     end
   end
 
-  describe "#process_multiplication" do
+  describe "#multiply" do
     it "should attempt to apply the operator '*'" do
       @stack.should_receive(:apply_operator).with(:*)
-      @stack.process_multiplication
+      @stack.multiply
     end
   end
 
