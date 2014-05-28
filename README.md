@@ -1,7 +1,7 @@
 # StackMachine
 
 ## How I went about doing this task
-[Please refer to this document](AbdullahALI_APPROACH.pdf)
+1. V1: [Please refer to this document](AbdullahALI_APPROACH.pdf)
 
 ## Usage
 1. Add gem to your Gemfile
