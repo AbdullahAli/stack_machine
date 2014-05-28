@@ -6,20 +6,20 @@
 ## Usage
 1. Add gem to your Gemfile
     
-        `gem 'stack_machine', :git => 'https://github.com/AbdullahAli/stack_machine', :tag => 'v2.0'`
+        gem 'stack_machine', :git => 'https://github.com/AbdullahAli/stack_machine', :tag => 'v2.0'
 
 2. Install gem
 
-        `bundle install`
+        bundle install
 
 3. Load console
 
-        `rails c`
+        rails c
 
 4. Create a new Stack Machine instance
 
-        `m = StackMachine::Machine.new`
+        m = StackMachine::Machine.new
 
 5. Process input
 
-        `m.stack_machine_emulator("13+62*7+*")`
+        m.stack_machine_emulator("13+62*7+*")
