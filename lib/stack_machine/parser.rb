@@ -1,15 +1,15 @@
 module StackMachine
-  module Parser
+  class Parser
     ALLOWED_OPERATORS = ['+', '*'] unless defined?(ALLOWED_OPERATORS)
     ALLOWED_INTEGERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] unless defined?(ALLOWED_INTEGERS)
     ALLOWED_CHARACTERS = (ALLOWED_OPERATORS + ALLOWED_INTEGERS) unless defined?(ALLOWED_CHARACTERS)
 
-    def valid_input?
-      !empty_input? && starts_with_integer? && !has_invalid_characters? && has_more_integers_than_operators?
+    def initialize(input)
+      @input = input
     end
 
-    def is_operator?(character)
-      ALLOWED_OPERATORS.include?(character)
+    def valid_input?
+      !empty_input? && starts_with_integer? && !has_invalid_characters? && has_more_integers_than_operators?
     end
 
     private

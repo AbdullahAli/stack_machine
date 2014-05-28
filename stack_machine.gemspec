@@ -1,24 +1,19 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'stack_machine/version'
+require File.expand_path('../lib/stack_machine/version', __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "stack_machine"
-  spec.version       = StackMachine::VERSION
-  spec.authors       = ["Abdullah Ali"]
-  spec.email         = ["abdullah-ali@hotmail.co.uk"]
-  spec.summary       = %q{A stack machine for job interview}
-  spec.description   = %q{A stack machine for job interview for HouseTrip}
-  spec.homepage      = "https://github.com/AbdullahAli"
-  spec.license       = "MIT"
+Gem::Specification.new do |gem|
+  gem.name          = 'stack_machine'
+  gem.authors       = 'Abdullah Ali'
+  gem.version       = StackMachine::VERSION
+  gem.email         = 'abdullah-ali@hotmail.co.uk'
+  gem.description   = %q{A Stack Machine processor.  Able to apply addition and multiplication on integer characters}
+  gem.summary       = %q{A Stack Machine processor}
+  gem.homepage      = "https://github.com/AbdullahAli/stack_machine"
+  gem.license       = 'MIT'
+  gem.files         = `git ls-files`.split($\)
+  gem.require_paths = ['lib']
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
-
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake", "~> 0"
-  spec.add_development_dependency "rspec", "~> 2.14"
+  gem.add_development_dependency "bundler", "~> 1.5"
+  gem.add_development_dependency "rake", "~> 10.0"
+  gem.add_development_dependency "rspec", "~> 2.14"
 end

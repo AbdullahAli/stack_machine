@@ -1,19 +1,17 @@
-require './lib/parser'
-require './lib/stack'
-require './lib/processors'
+require 'stack_machine/parser'
+require 'stack_machine/processors'
+require 'stack_machine/stack'
 
 module StackMachine
   class Machine
-    include ::StackMachine::Parser
-    include ::StackMachine::Processors
-    attr_accessor :stack
     attr_accessor :input
-
-    OPERATOR_SIGN_TO_PROCESSOR_MAP = {'+' => 'Addition', '*' => 'Multiplication'} unless defined?(OPERATOR_SIGN_TO_PROCESSOR_MAP)
+    attr_accessor :stack
 
     def stack_machine_emulator(s)
-      @input = s
-      if valid_input?
+      parser = StackMachine::Parser.new(s)
+
+      if parser.valid_input?
+        @input = s
         process
       else
         -1
@@ -26,18 +24,20 @@ module StackMachine
       @stack = ::StackMachine::Stack.new
 
       @input.each_char do |character|
-        processor_for(character).process(@stack, character)
+        processor_for(character).process(character)
       end
       @stack
     end
 
     def processor_for(character)
-      if is_operator?(character)
-        processor = "StackMachine::Processors::#{OPERATOR_SIGN_TO_PROCESSOR_MAP[character]}"
-      else
-        processor = "StackMachine::Processors::Integer"
+      if character =~ /^[+]$/
+        StackMachine::Processors::Addition.new(@stack)
+      elsif character =~ /^[*]$/
+        StackMachine::Processors::Multiplication.new(@stack)
+      elsif character =~ /^[0123456789]$/
+        StackMachine::Processors::Integer.new(@stack)
       end
-      StackMachine.const_get(processor).new
     end
+
   end
 end
