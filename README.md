@@ -1,7 +1,8 @@
 # StackMachine
 
 ## How I went about doing this task
-1. V1: [Please refer to this document](AbdullahALI_APPROACH.pdf)
+1. V1 (before feedback): [Please refer to this document](AbdullahALI_APPROACH.pdf)
+2. V2 (after feedback): [Please refer to this document](AbdullahALI_APPROACH_V2.pdf)
 
 ## Usage
 1. Add gem to your Gemfile
