@@ -2,7 +2,7 @@
 
 ## How I went about doing this task
 1. V1 (before feedback): [Please refer to this document](AbdullahALI_APPROACH.pdf)
-2. V2 (after feedback): [Please refer to this document](AbdullahALI_APPROACH_V2.pdf)
+2. V2 (after feedback): [Please refer to this document](https://github.com/AbdullahAli/stack_machine/blob/8ae0030137258bb16120d56c6218cdd3aa6a24e0/AbdullahALI_APPROACH_V2.pdf?raw=true)
 
 ## Usage
 1. Add gem to your Gemfile
