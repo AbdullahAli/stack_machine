@@ -1,5 +1,5 @@
 require 'spec_helper'
-require './lib/stack.rb'
+require 'stack_machine/stack'
 
 describe StackMachine::Stack do
   before(:all) do
